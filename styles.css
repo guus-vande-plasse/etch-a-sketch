@@ -1,0 +1,22 @@
+#grid-container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    grid-gap: 0px;
+    background-color: black;
+    padding: 0px;
+    width: 750px;
+    height: 750px;
+  }
+
+  #grid-container > div {
+    /*background-color: rgba(255, 255, 255, 0.8);*/ 
+    border: 1px solid black; 
+    text-align: center;
+    font-size: 30px;
+    color: #2196F3;
+ 
+  }
+  #button {
+      background-color: orange;
+  }
