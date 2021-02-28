@@ -1,6 +1,5 @@
 //javascript file
 
-//create the grid
 //select container
 const container = document.querySelector('#grid-container')
 // set the default width and height
@@ -17,9 +16,7 @@ function createGrid() {
     for(i=1; i <= numberOfDiv; i++){
     let divFor = document.createElement('div')
     divFor.setAttribute("id", i)
-    //divFor.textContent = "-";
-    //console.log(i)
-    console.log("this is numberofDiv: " + numberOfDiv)
+    //change the color with mouseouver
     divFor.addEventListener("mouseover",changeColor)
     container.appendChild(divFor);
 }
@@ -27,7 +24,12 @@ function createGrid() {
 createGrid()
 //create a function to change the color of the div
 function changeColor(e) {
-e.target.setAttribute('style', 'background: white')
+    const colorArray = ['white', 'yellow', 'red']
+    const random = Math.floor(Math.random() * 3);
+    console.log(random)
+    const color = colorArray[random]
+    console.log(color)
+    e.target.style.backgroundColor = color;
 }
 
 //create a function to remove all Divs from grid container
@@ -40,7 +42,7 @@ function removeDiv(){
 
 //create a function to get the gridDimension
 function getGridDimension() {
-    return prompt("Put in a grid:")
+    return prompt("Put in the number of elements you want on one row:")
 }
 
 //create a combined button function
@@ -51,9 +53,8 @@ function btnFunction() {
     createGrid()
 }
 
-//button functions, remove divs and create a new grid
+//button eventlistener, trigger combining functions, remove divs and create a new grid
 const btn = document.querySelector("#button")
-console.log(btn)
 btn.addEventListener("click", btnFunction)
 
 
